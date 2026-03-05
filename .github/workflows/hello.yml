@@ -1,11 +1,8 @@
 # Name of the worflow
 name: hello worflow
 
-# Trigger the workflow on every push
+# Trigger the workflow Every day at midnight UTC
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: "0 0 * * *"  # Every day at midnight UTC
 
