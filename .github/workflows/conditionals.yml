@@ -2,7 +2,7 @@
 name: conditional-demo
 
 on:
- workflow_dispatch: 
+ workflow_dispatch:
 
 jobs:
   when_main:
@@ -10,11 +10,13 @@ jobs:
    steps:
      - name: runs when the branch is main
        if: github.ref == 'refs/heads/main'
-       run: echo " runs when the branch is main"
+       run: |
+        echo "runs when the branch is main"
+        exit 1
 
      - name: only runs when the previous step failed
        if: failure()
-       run: echo "Previous step failed"
+       run: echo "Previous step failed....."
 
    
      
