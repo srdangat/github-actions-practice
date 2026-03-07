@@ -24,6 +24,6 @@ jobs:
     steps:
       - name: only run on push events
         run: "Only run on push events"
-        continue-on-error: true
+        # continue-on-error: true
    
      
