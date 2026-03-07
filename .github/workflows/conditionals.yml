@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: only run on push events
-        run: "Only run on push events"
+        run: echo "Only run on push events"
         # continue-on-error: true
    
      
