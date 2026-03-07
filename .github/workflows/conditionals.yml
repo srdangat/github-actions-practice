@@ -1,0 +1,14 @@
+# Conditionals: `if: github.ref == 'refs/heads/main'`
+name: conditional-demo
+
+on:
+ workflow_dispatch: 
+
+jobs:
+  when_main:
+   runs-on: ubuntu-latest
+   steps:
+     - name: runs when the branch is main
+       if: github.ref == 'refs/heads/main'
+       run: echo " runs when the branch is main"
+     
