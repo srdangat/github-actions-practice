@@ -7,7 +7,7 @@ set -euo pipefail
 # Function to display hostname and OS information
 system_info() {
     echo "=============== Hostname & OS Info ================"
-    echo "HostName : $(hostnme)"         # Fetches the network name of the machine
+    echo "HostName : $(hostnme_fail)"         # Fetches the network name of the machine
     echo "Kernel   : $(uname -r)"         # Returns the Linux kernel release version
     echo "OS       : $(lsb_release -ds)"  # Returns the distribution description (e.g., Ubuntu 22.04)
     echo
