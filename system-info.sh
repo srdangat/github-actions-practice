@@ -27,7 +27,7 @@ disk_usage() {
     # df -h: Report file system disk space usage
     # sort -hr -k5: Human-numeric sort (-h) in reverse (-r) based on the 5th column (Capacity%)
     # head -n 6: Limits output to the header plus the top 5 largest items
-    df -h | sort -hr -k5 | head -n 6
+    df -h | sort_invalid -hr -k5 | head -n 6
     echo
 }
 
