@@ -7,7 +7,7 @@ set -euo pipefail
 # Function to display hostname and OS information
 system_info() {
     echo "=============== Hostname & OS Info ================"
-    echo "HostName : $(hostnme_fail)"         # Fetches the network name of the machine
+    echo "HostName : $(hostname)"         # Fetches the network name of the machine
     echo "Kernel   : $(uname -r)"         # Returns the Linux kernel release version
     echo "OS       : $(lsb_release -ds)"  # Returns the distribution description (e.g., Ubuntu 22.04)
     echo
@@ -27,7 +27,7 @@ disk_usage() {
     # df -h: Report file system disk space usage
     # sort -hr -k5: Human-numeric sort (-h) in reverse (-r) based on the 5th column (Capacity%)
     # head -n 6: Limits output to the header plus the top 5 largest items
-    df -h | sort_invalid -hr -k5 | head -n 6
+    df -h | sort -hr -k5 | head -n 6
     echo
 }
 
