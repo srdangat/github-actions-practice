@@ -1,0 +1,20 @@
+name: docker cicd
+
+on:
+  push:
+   branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build docker image & Tag
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: webapp:latest
+            
