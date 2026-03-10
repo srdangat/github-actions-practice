@@ -1,11 +1,12 @@
 # Name of the worflow
 name: hello worflow
 
-# Trigger the workflow on every push
-on:
-  push:
-    branches:
-      - main
+
+on: 
+  workflow_dispatch: 
+# Trigger the workflow Every day at midnight UTC
+  # schedule:
+  #   - cron: "0 0 * * *"  # Every day at midnight UTC
 
 # Define the jobs that will run in this workflow
 jobs:
@@ -45,3 +46,4 @@ jobs:
       # Step 6 Intentionally fail    
       # - name: Break the workflow on purpose
       #   run: exit 1
+
