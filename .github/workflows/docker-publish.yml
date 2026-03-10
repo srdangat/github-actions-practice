@@ -27,7 +27,9 @@ jobs:
       - name: Set short SHA using slice
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
-      - name: Build, tag & push to Docker Hub
+      # Build and Push only on main
+      - name: Build, tag & push to Docker Hub if pushed from main
+        if: github.ref_name == 'main'
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -35,3 +37,11 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/webapp:latest
             ${{ secrets.DOCKER_USERNAME }}/webapp:sha-${{ env.SHORT_SHA }}
+
+    # Build only for feature branches and PRs
+      - name: Build image if pushed from other branches or PRs
+        if: github.ref_name != 'main'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
