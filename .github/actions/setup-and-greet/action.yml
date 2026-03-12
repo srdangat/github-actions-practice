@@ -52,4 +52,4 @@ runs:
       id: set
       shell: bash
       run: |
-        echo "greeted=true" >> $GITHUB_OUTPUT
+        echo "greeted=true" >> "$GITHUB_OUTPUT"
