@@ -1,13 +1,14 @@
 name: Smart Trigger Workflow
 
 on:
-  push:
-    branches:
-      - main
-      - 'release/*'
-    paths:
-      - 'src/**'
-      - 'app/**'
+ workflow_dispatch: 
+  # push:
+  #   branches:
+  #     - main
+  #     - 'release/*'
+  #   paths:
+  #     - 'src/**'
+  #     - 'app/**'
 
 jobs:
   run-when-source-changed:
