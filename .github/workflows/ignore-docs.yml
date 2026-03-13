@@ -17,5 +17,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Print event
+        run: echo "${{ toJson(github.event) }}"
+
       - name: Run workflow task
         run: echo "Workflow run because change was not docs-only"
